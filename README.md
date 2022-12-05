@@ -8,7 +8,7 @@ Repository with my solution to [Advent of Code](https://adventofcode.com).
 |  2    | :star: :star: |
 |  3    | :star: :star: |
 |  4    | :star: :star: |
-|  5    | :question: :question: |
+|  5    | :star: :star: |
 |  6    | :question: :question: |
 |  7    | :question: :question: |
 |  8    | :question: :question: |
