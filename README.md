@@ -13,7 +13,7 @@ Repository with my solution to [Advent of Code](https://adventofcode.com).
 |  7    | :star: :star: |
 |  8    | :star: :star: |
 |  9    | :star: :star: |
-|  10   | :question: :question: |
+|  10   | :star: :star: |
 |  11   | :question: :question: |
 |  12   | :question: :question: |
 |  13   | :question: :question: |
