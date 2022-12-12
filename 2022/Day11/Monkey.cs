@@ -12,7 +12,7 @@ public class Monkey : ICloneable
     private int _add;
     private int _multiply;
     private int _pow;
-    private int _dividableBy;
+    public int DividableBy { get; private set; }
     private int _whenTrueThrowTo;
     private int _whenFalseThrowTo;
 
@@ -31,7 +31,7 @@ public class Monkey : ICloneable
     {
         Id = id;
         _items = new Queue<BigInteger>(items);
-        _dividableBy = dividableBy;
+        DividableBy = dividableBy;
         _add = add;
         _multiply = multiply;
         _pow = pow;
@@ -46,7 +46,7 @@ public class Monkey : ICloneable
             var item = _items.Dequeue();
             var worryLevel = (Pow(item, _pow) * _multiply + _add) / 3;
             group.GiveTo(
-                worryLevel % _dividableBy == 0 ? _whenTrueThrowTo : _whenFalseThrowTo,
+                worryLevel % DividableBy == 0 ? _whenTrueThrowTo : _whenFalseThrowTo,
                 worryLevel
             );
             TimesItemInspected++;
@@ -68,15 +68,9 @@ public class Monkey : ICloneable
         while (_items.Count > 0)
         {
             var item = _items.Dequeue();
-
-            if (_pow != 0)
-            {
-                
-            }
-            
-            var worryLevel = Pow(item, _pow) * _multiply + _add;
+            var worryLevel = (Pow(item, _pow) * _multiply + _add) % group.GetMultiplicationOfDivisionValues();
             group.GiveTo(
-                worryLevel % _dividableBy == 0 ? _whenTrueThrowTo : _whenFalseThrowTo,
+                worryLevel % DividableBy == 0 ? _whenTrueThrowTo : _whenFalseThrowTo,
                 worryLevel
             );
             TimesItemInspected++;
@@ -123,7 +117,7 @@ public class Monkey : ICloneable
 
     public object Clone()
     {
-        Monkey m = new Monkey(Id, Items, _dividableBy, _add, _multiply, _pow, _whenTrueThrowTo, _whenFalseThrowTo);
+        Monkey m = new Monkey(Id, Items, DividableBy, _add, _multiply, _pow, _whenTrueThrowTo, _whenFalseThrowTo);
         return m;
     }
 }

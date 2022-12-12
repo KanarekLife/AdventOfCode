@@ -5,11 +5,13 @@ namespace AdventOfCode;
 public class MonkeyGroup
 {
     private Monkey[] _monkeys;
+    private int _getMultiplicationOfDivisionValues;
     private readonly Monkey[] _originalMonkeys;
 
     private MonkeyGroup(Monkey[] monkeys)
     {
         _monkeys = monkeys;
+        _getMultiplicationOfDivisionValues = _monkeys.Select(x => x.DividableBy).Aggregate((a, b) => a * b);
         _originalMonkeys = monkeys.Select(a => (Monkey)a.Clone()).ToArray();
     }
 
@@ -65,8 +67,11 @@ public class MonkeyGroup
         _monkeys[monkeyId].AddItem(item);
     }
 
+    public int GetMultiplicationOfDivisionValues() => _getMultiplicationOfDivisionValues;
+
     private void Reset()
     {
         _monkeys = _originalMonkeys;
+        _getMultiplicationOfDivisionValues = _monkeys.Select(x => x.DividableBy).Aggregate((a, b) => a * b);
     }
 }
