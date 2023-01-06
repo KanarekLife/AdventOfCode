@@ -18,7 +18,7 @@ Repository with my solution to [Advent of Code](https://adventofcode.com).
 | 12  | :star: :star:                                         |
 | 13  | :star: :star:                                         |
 | 14  | :star: :star:                                         |
-| 15  | :question: :question:                                 |
+| 15  | :star: :star:                                         |
 | 16  | :question: :question:                                 |
 | 17  | :question: :question:                                 |
 | 18  | :question: :question:                                 |
