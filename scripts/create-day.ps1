@@ -4,7 +4,7 @@
 #>
 
 param(
-    [int] $year = 2022,
+    [int] $year = 2023,
     [Parameter(Mandatory=$true)]
     [int] $day
 )
