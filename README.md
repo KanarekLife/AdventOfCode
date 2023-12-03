@@ -6,7 +6,7 @@ Repository with my solution to [Advent of Code](https://adventofcode.com).
 |-----|-------------------------------------------------------|-------------------------------------------------------|
 | 1   | :star: :star:                                         | :star: :star:                                         |
 | 2   | :star: :star:                                         | :star: :star:                                         |
-| 3   | :star: :star:                                         | :question: :question:                                 |
+| 3   | :star: :star:                                         | :star: :star:                                 |
 | 4   | :star: :star:                                         | :question: :question:                                 |
 | 5   | :star: :star:                                         | :question: :question:                                 |
 | 6   | :star: :star:                                         | :question: :question:                                 |
