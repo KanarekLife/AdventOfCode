@@ -10,7 +10,7 @@ Repository with my solution to [Advent of Code](https://adventofcode.com).
 | 4   | :star: :star:                                         | :star: :star:                                         |
 | 5   | :star: :star:                                         | :star: :star:                                         |
 | 6   | :star: :star:                                         | :star: :star:                                         |
-| 7   | :star: :star:                                         | :question: :question:                                 |
+| 7   | :star: :star:                                         | :star: :star:                                         |
 | 8   | :star: :star:                                         | :question: :question:                                 |
 | 9   | :star: :star:                                         | :question: :question:                                 |
 | 10  | :star: :star:                                         | :question: :question:                                 |
