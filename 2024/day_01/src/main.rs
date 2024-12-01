@@ -1,13 +1,6 @@
 use std::{collections::HashMap, ops::AddAssign};
 
 const FILE_INPUT: &str = include_str!("input.txt");
-const TEST_INPUT: &str = "3   4
-4   3
-2   5
-1   3
-3   9
-3   3
-";
 
 fn main() {
     println!("Task 01: {}", task_01(FILE_INPUT));
@@ -15,60 +8,55 @@ fn main() {
 }
 
 fn task_01(input: &str) -> i32 {
-    let lists: (Vec<_>, Vec<_>) = input.lines()
-        .flat_map(|line| line.split("   "))
-        .enumerate()
-        .partition(|(i, _)| i % 2 == 0);
+    let (mut a, mut b): (Vec<i32>, Vec<i32>) = input.lines()
+        .map(|line| {
+            let elements: Vec<i32> = line.split("   ").map(|x| x.parse::<i32>().unwrap()).collect();
+            return (*elements.first().unwrap(), *elements.last().unwrap());
+        })
+        .unzip();
 
-    let mut list_a: Vec<i32> = lists.0
-        .iter()
-        .map(|(_, x)| x.parse::<i32>().unwrap())
-        .collect();
-    list_a.sort();
+    a.sort();
+    b.sort();
 
-    let mut list_b: Vec<i32> = lists.1
-        .iter()
-        .map(|(_, x)| x.parse::<i32>().unwrap())
-        .collect();
-    list_b.sort();
-
-    list_a.into_iter().zip(list_b)
+    a.into_iter().zip(b)
         .map(|(a,b)| (a - b).abs())
         .sum()
 }
 
 fn task_02(input: &str) -> i32 {
-    let lists: (Vec<_>, Vec<_>) = input.lines()
-        .flat_map(|line| line.split("   "))
-        .enumerate()
-        .partition(|(i, _)| i % 2 == 0);
+    let (a, b): (Vec<i32>, Vec<i32>) = input.lines()
+        .map(|line| {
+            let elements: Vec<i32> = line.split("   ").map(|x| x.parse::<i32>().unwrap()).collect();
+            return (*elements.first().unwrap(), *elements.last().unwrap());
+        })
+        .unzip();
+    let mut map = HashMap::with_capacity(1000);
 
-    let list_b_iter = lists.1
-        .iter()
-        .map(|(_, x)| x.parse::<i32>().unwrap());
-    let mut values = HashMap::new();
-
-    for element in list_b_iter {
-        let element_ref = values.get_mut(&element);
-
+    for element in b {
+        let element_ref = map.get_mut(&element);
         if element_ref.is_none() {
-            values.insert(element, 1);
+            map.insert(element, 1);
             continue;
         }
-
         element_ref.unwrap().add_assign(1);
     }
-    
-    lists.0
-        .iter()
-        .map(|(_, x)| x.parse::<i32>().unwrap())
-        .map(|x| x * values.get(&x).unwrap_or(&0))
-        .sum()
+
+    return a.iter()
+        .map(|x| x * map.get(&x).unwrap_or(&0))
+        .sum();
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    const TEST_INPUT: &str = "3   4
+4   3
+2   5
+1   3
+3   9
+3   3
+";
 
     #[test]
     fn task_01_example() {
