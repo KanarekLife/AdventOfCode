@@ -5,7 +5,7 @@ Repository with my solution to [Advent of Code](https://adventofcode.com).
 | Day | [Advent of Code 2022](https://adventofcode.com/2022/) | [Advent of Code 2023](https://adventofcode.com/2023/) | [Advent of Code 2024](https://adventofcode.com/2024/) |
 | --- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 | 1   | :star: :star:                                         | :star: :star:                                         | :star: :star:                                         |
-| 2   | :star: :star:                                         | :star: :star:                                         | :question: :question:                                 |
+| 2   | :star: :star:                                         | :star: :star:                                         | :star: :star:                                         |
 | 3   | :star: :star:                                         | :star: :star:                                         | :question: :question:                                 |
 | 4   | :star: :star:                                         | :star: :star:                                         | :question: :question:                                 |
 | 5   | :star: :star:                                         | :star: :star:                                         | :question: :question:                                 |
